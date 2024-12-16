@@ -13,6 +13,7 @@ namespace ctk {
     enum class TokenType {
         NUMBER,
         OPERATOR,
+        BRACKET,
         UNKNOWN
     };
 

@@ -22,7 +22,8 @@ namespace cps {
                 ctk::Token firstToken = this->tokens.top();
                 this->tokens.pop();
 
-                if (token.getValue() == "+") {
+                /*
+                 * if (token.getValue() == "+") {
                     this->tokens.push(ctk::Token(ctk::TokenType::NUMBER, std::to_string(std::stod(firstToken.getValue()) + std::stod(secondToken.getValue()))));
                 } else if (token.getValue() == "-") {
                     this->tokens.push(ctk::Token(ctk::TokenType::NUMBER, std::to_string(std::stod(firstToken.getValue()) - std::stod(secondToken.getValue()))));
@@ -37,6 +38,13 @@ namespace cps {
                     throw std::runtime_error("Operatore non supportato: " + token.getValue());
 
                 }
+                 */
+
+                auto it = this->operators.find(token.getValue()[0]);
+                if (it != operators.end()) {
+                    this->tokens.push(ctk::Token(ctk::TokenType::NUMBER, std::to_string(it->second(std::stod(firstToken.getValue()), (std::stod(secondToken.getValue()))))));
+                }
+
             }
         }
         return std::stod(this->tokens.top().getValue());

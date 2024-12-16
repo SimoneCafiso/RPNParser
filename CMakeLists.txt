@@ -9,4 +9,6 @@ add_executable(RPNParser main.cpp
         Tokenizer.cpp
         Tokenizer.hpp
         RPNParser.cpp
-        RPNParser.hpp)
+        RPNParser.hpp
+        InfixTransformer.cpp
+        InfixTransformer.hpp)

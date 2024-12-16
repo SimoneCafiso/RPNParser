@@ -43,6 +43,8 @@ namespace ctk {
         } else if (isOperator(c)) {
             //prima legge la posizione poi incrementa position;
             return Token(TokenType::OPERATOR, std::string(1, input[position++]));
+        } else if (isBracket(c)){
+            return Token(TokenType::BRACKET, std::string(1, input[position++]));
         }
 
         return Token(TokenType::UNKNOWN, std::string(1, input[position++]));

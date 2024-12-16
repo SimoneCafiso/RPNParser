@@ -22,7 +22,7 @@ namespace ctk {
         size_t position;
 
         [[nodiscard]] static bool isDigit(char ch) { return std::isdigit(ch); }
-        [[nodiscard]] static bool isOperator(char ch) { return ch == '+' || ch == '-' || ch == '*' || ch == '/'; }
+        [[nodiscard]] static bool isOperator(char ch) { return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^'; }
         [[nodiscard]] static bool isBracket(char ch) { return ch == '(' || ch == ')'; }
 
         Token extractNum();
